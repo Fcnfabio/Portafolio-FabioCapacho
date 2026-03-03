@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fabio Capacho — FullStack Developer</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- PARTICLES BG -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>FC<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge reveal-up" style="--delay:0s">
+          <span class="badge-dot"></span>
+          Available for work · Colombia
+        </div>
+        <h1 class="hero-name reveal-up" style="--delay:0.1s">
+          <span class="name-line">Fabio</span>
+          <span class="name-line accent">Capacho</span>
+        </h1>
+        <div class="hero-roles reveal-up" style="--delay:0.25s">
+          <span class="role-static">I'm a </span>
+          <span class="role-rotate" id="roleRotate">FullStack Developer</span>
+        </div>
+        <p class="hero-bio reveal-up" style="--delay:0.35s">
+          Building digital experiences at the intersection of <em>code</em>, <em>design</em>, and <em>algorithmic trading</em>. AI enthusiast & prompt engineer.
+        </p>
+        <div class="hero-actions reveal-up" style="--delay:0.45s">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="hero-social reveal-up" style="--delay:0.55s">
+          <a href="https://github.com/Fcnfabio" target="_blank" class="social-icon" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/fabio-capacho-749b953ab/" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/fcapacho_9" target="_blank" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-right reveal-up" style="--delay:0.2s">
+        <div class="avatar-container">
+          <div class="avatar-glow"></div>
+          <div class="avatar-ring ring1"></div>
+          <div class="avatar-ring ring2"></div>
+          <img src="assets/avatar-real.png" alt="Fabio Capacho" class="avatar-img" id="avatarImg"/>
+          <div class="avatar-badge-card">
+            <span class="abc-icon">🤖</span>
+            <span class="abc-text">AI Enthusiast</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">01 — About</span>
+        <h2 class="section-title">Who I am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-img-wrap reveal-left">
+          <img src="assets/avatar-ai.png" alt="Fabio AI avatar" class="about-img"/>
+          <div class="about-img-caption">
+            <span class="caption-tag">AI-generated avatar</span>
+          </div>
+          <div class="about-img-deco"></div>
+        </div>
+        <div class="about-content reveal-right">
+          <p class="about-intro">
+            I'm <strong>Fabio Daniel Capacho Nuñez</strong>, a FullStack Developer, Designer, and Algorithmic Trading enthusiast from <strong>Colombia</strong>. I build things that work, look great, and scale.
+          </p>
+          <p class="about-text">
+            I'm passionate about <em>artificial intelligence</em> — not just using it, but understanding it. I have hands-on experience crafting effective prompts and integrating AI into real workflows. I love the idea that code can generate alpha in financial markets just as much as it can render a beautiful UI.
+          </p>
+          <p class="about-text">
+            When I'm not at a keyboard I'm probably playing football, studying chess openings, or analyzing a chart. I believe in lifelong learning and moving fast.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Code</span>
+            <span class="tag">Football</span>
+            <span class="tag">Chess</span>
+            <span class="tag">Trading</span>
+            <span class="tag">AI & Prompts</span>
+            <span class="tag">Learning</span>
+          </div>
+          <div class="about-langs">
+            <div class="lang-item">
+              <span class="lang-flag">🇺🇸</span>
+              <div class="lang-info">
+                <span class="lang-name">English</span>
+                <div class="lang-bar-wrap"><div class="lang-bar" style="--w:65%"></div></div>
+                <span class="lang-level">B1</span>
+              </div>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇫🇷</span>
+              <div class="lang-info">
+                <span class="lang-name">French</span>
+                <div class="lang-bar-wrap"><div class="lang-bar" style="--w:25%"></div></div>
+                <span class="lang-level">A1–A2</span>
+              </div>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇨🇴</span>
+              <div class="lang-info">
+                <span class="lang-name">Spanish</span>
+                <div class="lang-bar-wrap"><div class="lang-bar" style="--w:100%"></div></div>
+                <span class="lang-level">Native</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">02 — Skills</span>
+        <h2 class="section-title">Technical Stack</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category reveal-up" style="--delay:0s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">⟨/⟩</span>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">HTML5</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">CSS3</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-pct">72%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal-up" style="--delay:0.1s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">{ }</span>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill accent" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">Java</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">MySQL</span><span class="skill-pct">73%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:73%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal-up" style="--delay:0.2s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">✦</span>
+            <h3>Design</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">Responsive Design</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">UI/UX</span><span class="skill-pct">74%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:74%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal-up" style="--delay:0.3s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">⚙</span>
+            <h3>Tools</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">GitHub</span><span class="skill-pct">77%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:77%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">VS Code</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top"><span class="skill-name">Linux</span><span class="skill-pct">71%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--w:71%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-orbit-section reveal-up" style="--delay:0.4s">
+        <div class="orbit-center"><span class="orbit-label">Stack</span></div>
+        <div class="orbit orbit1">
+          <div class="orbit-item" style="--angle:0deg"><span>HTML</span></div>
+          <div class="orbit-item" style="--angle:72deg"><span>CSS</span></div>
+          <div class="orbit-item" style="--angle:144deg"><span>JS</span></div>
+          <div class="orbit-item" style="--angle:216deg"><span>Python</span></div>
+          <div class="orbit-item" style="--angle:288deg"><span>Java</span></div>
+        </div>
+        <div class="orbit orbit2">
+          <div class="orbit-item" style="--angle:36deg"><span>MySQL</span></div>
+          <div class="orbit-item" style="--angle:156deg"><span>Git</span></div>
+          <div class="orbit-item" style="--angle:276deg"><span>Linux</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">03 — Projects</span>
+        <h2 class="section-title">What I've Built</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal-up" style="--delay:0s">
+          <div class="project-top">
+            <div class="project-dots">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            </div>
+            <span class="project-tag">Python · CLI · JSON</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Personal Expense Manager</h3>
+            <p class="project-desc">
+              A modular command-line application built in Python that allows users to <strong>register, categorize, and analyze personal expenses</strong> in real time. Data is persisted in a JSON file, with operations split across dedicated modules: <code>gastos.py</code> for expense logic, <code>operaciones.py</code> for calculations, and a clean console UX powered by <code>limpiarconsola.py</code>. Demonstrates clean architecture and file I/O handling.
+            </p>
+            <div class="project-stack">
+              <span>Python 3</span><span>JSON</span><span>OOP</span><span>CLI</span>
+            </div>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Fcnfabio/Proyecto_PythonCapachoFabio" target="_blank" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-card project-coming reveal-up" style="--delay:0.15s">
+          <div class="project-top">
+            <div class="project-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <span class="project-tag">Algorithmic Trading</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Trading Bot <span class="wip-badge">In Progress</span></h3>
+            <p class="project-desc">An algorithmic trading system currently under development as part of the University of Rosario program. Focused on backtesting strategies, technical indicator automation, and real-time signal generation using Python.</p>
+            <div class="project-stack"><span>Python</span><span>Pandas</span><span>TA-Lib</span><span>API</span></div>
+          </div>
+          <div class="project-footer"><span class="project-link-disabled">Coming soon</span></div>
+        </div>
+        <div class="project-card project-coming reveal-up" style="--delay:0.3s">
+          <div class="project-top">
+            <div class="project-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <span class="project-tag">FullStack</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">FullStack Web App <span class="wip-badge">In Progress</span></h3>
+            <p class="project-desc">A full-stack web application currently in development at Campuslands. Integrating a Java backend with a MySQL database and a responsive HTML/CSS/JS frontend. REST API-first architecture.</p>
+            <div class="project-stack"><span>Java</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JS</span></div>
+          </div>
+          <div class="project-footer"><span class="project-link-disabled">Coming soon</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section section-dark" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">04 — Education</span>
+        <h2 class="section-title">My Path</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal-left" style="--delay:0s">
+          <div class="timeline-marker">
+            <div class="tm-dot"></div>
+            <div class="tm-line"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="tl-year">2026</span>
+            <h3 class="tl-title">Algorithmic Trading</h3>
+            <span class="tl-school">University of Rosario</span>
+            <p class="tl-desc">Specialized program focused on financial markets, quantitative strategies, and automated trading systems using Python and data analysis.</p>
+            <div class="tl-tags"><span>Python</span><span>Finance</span><span>Quant</span></div>
+          </div>
+        </div>
+        <div class="timeline-item reveal-left" style="--delay:0.15s">
+          <div class="timeline-marker">
+            <div class="tm-dot active"></div>
+            <div class="tm-line"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="tl-year">2025 – Present</span>
+            <h3 class="tl-title">Software Development Technician</h3>
+            <span class="tl-school">Campuslands</span>
+            <p class="tl-desc">Intensive technical training in FullStack development: frontend, backend, databases, and agile methodologies. Hands-on real-world projects every module.</p>
+            <div class="tl-tags"><span>FullStack</span><span>Java</span><span>MySQL</span><span>HTML/CSS/JS</span></div>
+            <span class="tl-active-badge">● Active</span>
+          </div>
+        </div>
+        <div class="timeline-item reveal-left" style="--delay:0.3s">
+          <div class="timeline-marker">
+            <div class="tm-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="tl-year">2025</span>
+            <h3 class="tl-title">High School Diploma</h3>
+            <span class="tl-school">Institución Educativa Carl Rogers</span>
+            <p class="tl-desc">Completed secondary education with a focus on mathematics and natural sciences. Developed the foundational analytical skills that drive my technical work today.</p>
+            <div class="tl-tags"><span>Mathematics</span><span>Sciences</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">05 — Contact</span>
+        <h2 class="section-title">Let's Talk</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-left reveal-left">
+          <p class="contact-intro">Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is open.</p>
+          <div class="contact-items">
+            <a href="mailto:contactofabiocapacho@gmail.com" class="contact-item">
+              <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div class="ci-info"><span class="ci-label">Email</span><span class="ci-value">contactofabiocapacho@gmail.com</span></div>
+            </a>
+            <a href="https://github.com/Fcnfabio" target="_blank" class="contact-item">
+              <div class="ci-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
+              <div class="ci-info"><span class="ci-label">GitHub</span><span class="ci-value">github.com/Fcnfabio</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/fabio-capacho-749b953ab/" target="_blank" class="contact-item">
+              <div class="ci-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+              <div class="ci-info"><span class="ci-label">LinkedIn</span><span class="ci-value">Fabio Capacho</span></div>
+            </a>
+            <a href="https://www.instagram.com/fcapacho_9" target="_blank" class="contact-item">
+              <div class="ci-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+              <div class="ci-info"><span class="ci-label">Instagram</span><span class="ci-value">@fcapacho_9</span></div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-right reveal-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" autocomplete="off"/>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="email" placeholder="your@email.com" autocomplete="off"/>
+            </div>
+            <div class="form-group">
+              <label for="fmsg">Message</label>
+              <textarea id="fmsg" name="message" rows="5" placeholder="What's on your mind?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>FC<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-copy">Designed & built by <strong>Fabio Daniel Capacho Nuñez</strong> · Colombia · 2025</p>
+      <p class="footer-sub">FullStack Developer · Designer · Algorithmic Trading</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
