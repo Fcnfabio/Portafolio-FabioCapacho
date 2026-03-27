@@ -1,0 +1,101 @@
+/* ===========================
+   FABIO CAPACHO — PORTFOLIO
+   animations.css
+   =========================== */
+
+.reveal-up, .reveal-left, .reveal-right {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  transition-delay: var(--delay, 0s);
+}
+.reveal-up      { transform: translateY(36px); }
+.reveal-left    { transform: translateX(-36px); }
+.reveal-right   { transform: translateX(36px); }
+.reveal-up.visible, .reveal-left.visible, .reveal-right.visible {
+  opacity: 1; transform: translate(0);
+}
+
+@keyframes gradient-sweep {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-name .accent {
+  background: linear-gradient(90deg, #4f8ef7, #a78bfa, #4f8ef7);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-sweep 4s linear infinite;
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
+}
+.avatar-badge-card { animation: float-badge 4.5s ease-in-out infinite; }
+
+body::before {
+  content: ''; position: fixed; inset: 0;
+  pointer-events: none; z-index: 9997; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+@keyframes page-fadein { from { opacity: 0; } to { opacity: 1; } }
+body { animation: page-fadein 0.5s ease both; }
+
+.contact-item { position: relative; overflow: hidden; }
+.contact-item::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(79,142,247,0.08), transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.contact-item:hover::before { opacity: 1; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.skill-fill.animated {
+  background: linear-gradient(90deg, #4f8ef7 0%, #a78bfa 45%, #4f8ef7 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite 1.4s;
+}
+.skill-fill.accent.animated {
+  background: linear-gradient(90deg, #a78bfa 0%, #ec4899 45%, #a78bfa 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite 1.4s;
+}
+
+.project-card { position: relative; }
+.project-card::before {
+  content: ''; position: absolute; inset: -1px; border-radius: inherit;
+  background: linear-gradient(135deg, rgba(79,142,247,0), rgba(167,139,250,0), rgba(79,142,247,0));
+  opacity: 0; transition: opacity 0.4s; z-index: -1;
+}
+.project-card:hover::before {
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(167,139,250,0.1), rgba(79,142,247,0.15));
+}
+
+.section-title { position: relative; display: inline-block; }
+.section-title::after {
+  content: ''; position: absolute; bottom: -8px; left: 0;
+  height: 2px; width: 0;
+  background: linear-gradient(90deg, #4f8ef7, #a78bfa);
+  transition: width 0.8s cubic-bezier(0.4,0,0.2,1) 0.3s; border-radius: 2px;
+}
+.section-title.visible::after { width: 60%; }
+
+#scrollProgress {
+  position: fixed; top: 0; left: 0; height: 2px; z-index: 9000;
+  background: linear-gradient(90deg, #4f8ef7, #a78bfa); width: 0%;
+  transition: width 0.1s linear;
+}
+
+.btn .ripple {
+  position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,0.25); transform: scale(0);
+  animation: ripple-anim 0.5s ease-out; pointer-events: none;
+}
+@keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
